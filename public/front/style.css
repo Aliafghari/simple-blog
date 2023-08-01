@@ -1,0 +1,136 @@
+body {
+    font-family: "vazir";
+    src: url(Vazir-Variable.eot) format("eot");
+    src: url(Vazir-Variable.ttf) format("truetype"),
+        url(vazir-font-v27.2.2-Fontjo.com/Vazir-Black.woff) format("wolf"),
+        url(vazir-font-v27.2.2-Fontjo.com/Vazir-Black.woff2) format("wolf2");
+    direction: rtl;
+}
+
+.nav {
+    width: 100%;
+    background-color: #f0f0f0; /* یک رنگ پس‌زمینه برای ناوبری انتخاب کنید */
+    padding: 10px; /* یک حاشیه دهنده مطلوب از دور ناوبری را انتخاب کنید */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; /* این عدد می‌تواند تغییر کند تا ناوبری بالاترین لایه را در صفحه داشته باشد */
+}
+
+/* برای اندازه‌های کوچکتر از حداکثر محدوده‌ای که navbar با bootstrap به صورت همیشگی نمایش داده می‌شود، می‌توانید از media query استفاده کنید. */
+
+/* برای مثال، اگر حداکثر عرض صفحه کوچک 768 پیکسل است: */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block; /* تنظیم نمایش همیشگی در اندازه‌های کوچک */
+    }
+}
+
+.nav-item:hover .nav-link {
+    color: blue;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-image: linear-gradient(to right, #00bfff, #2539b6);
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-item:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.home-text {
+    padding-right: 200px;
+}
+
+.home-text p {
+    width: 500px;
+}
+
+.home-img {
+    background: url("picture/person4.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100%;
+    position: relative;
+}
+
+.home-img::before {
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 48% 0, 100% 100%, 0% 100%);
+    background-color: red;
+    width: 130%;
+    height: 100%;
+    z-index: -1;
+    left: 0%;
+}
+
+.blog-item img {
+    height: 250px;
+}
+
+
+
+/* تأثیر hover برای عنصر با کلاس skill */
+.skill:hover {
+  background-color: #f8f9fa;
+}
+
+/* تأثیر hover برای تگ <a> داخل عنصر با کلاس skill */
+.skill:hover a {
+  color: #fbfbfb;
+  text-decoration: none;
+  background-color: #371dcb;
+}
+
+
+/* تأثیر hover برای progress-bar ها */
+.progress-bar:hover {
+  font-weight: bold;
+  background-color: #2539b6;
+  color: #eaff00;
+}
+
+/* تأثیر hover برای عنصر با کلاس blog-item */
+.blog-item:hover {
+  font-weight: bold;
+  color: #2539b6;
+  background-color: #dce1e7;
+}
+
+/* تأثیر hover برای تگ <a> داخل عنصر با کلاس blog-item */
+.blog-item:hover a {
+  color: #000000;
+  text-decoration: none;
+  background-color: #c81dcb;
+}
+
+.blog-item:hover img {
+  width: 100%;
+  height: 270px;
+}
+
+/* تأثیر hover برای تگ <h4> داخل عنصر با کلاس blog-item */
+.blog-item:hover h4 {
+  color: #eb1313;
+  font-weight: bold;
+}
+
+.blog-detail img{
+  height: auto;
+}
+
