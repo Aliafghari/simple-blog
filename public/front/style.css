@@ -1,10 +1,14 @@
-body {
+@font-face {
     font-family: "vazir";
-    src: url(Vazir-Variable.eot) format("eot");
-    src: url(Vazir-Variable.ttf) format("truetype"),
-        url(vazir-font-v27.2.2-Fontjo.com/Vazir-Black.woff) format("wolf"),
-        url(vazir-font-v27.2.2-Fontjo.com/Vazir-Black.woff2) format("wolf2");
+    src: url("fonts/vazir.eot") format("eot");
+    src: url("fonts/vazir.ttf") format("truetype"),
+        url("fonts/vazir.woff") format("woff"),
+        url("fonts/vazir.woff") format("woff2");
+}
+
+body {
     direction: rtl;
+    font-family: "vazir" !important;
 }
 
 .nav {
@@ -83,54 +87,72 @@ body {
     height: 250px;
 }
 
-
-
 /* تأثیر hover برای عنصر با کلاس skill */
 .skill:hover {
-  background-color: #f8f9fa;
+    background-color: #f8f9fa;
 }
 
 /* تأثیر hover برای تگ <a> داخل عنصر با کلاس skill */
 .skill:hover a {
-  color: #fbfbfb;
-  text-decoration: none;
-  background-color: #371dcb;
+    color: #fbfbfb;
+    text-decoration: none;
+    background-color: #371dcb;
 }
-
 
 /* تأثیر hover برای progress-bar ها */
 .progress-bar:hover {
-  font-weight: bold;
-  background-color: #2539b6;
-  color: #eaff00;
+    font-weight: bold;
+    background-color: #2539b6;
+    color: #eaff00;
 }
 
 /* تأثیر hover برای عنصر با کلاس blog-item */
 .blog-item:hover {
-  font-weight: bold;
-  color: #2539b6;
-  background-color: #dce1e7;
+    font-weight: bold;
+    color: #2539b6;
+    background-color: #dce1e7;
 }
 
 /* تأثیر hover برای تگ <a> داخل عنصر با کلاس blog-item */
 .blog-item:hover a {
-  color: #000000;
-  text-decoration: none;
-  background-color: #c81dcb;
+    color: #000000;
+    text-decoration: none;
+    background-color: #c81dcb;
 }
 
 .blog-item:hover img {
-  width: 100%;
-  height: 270px;
+    width: 100%;
+    height: 270px;
 }
 
 /* تأثیر hover برای تگ <h4> داخل عنصر با کلاس blog-item */
 .blog-item:hover h4 {
-  color: #eb1313;
-  font-weight: bold;
+    color: #eb1313;
+    font-weight: bold;
 }
 
-.blog-detail img{
-  height: auto;
+.blog-detail img {
+    height: auto;
 }
 
+/*  نقطه پشت هر تگ از بین می رود  */
+.card-body ul li{
+    list-style: none;
+    border-bottom: 1px rgb(196, 196, 196) solid;
+}
+
+.card-body ul li:hover {
+    font-weight: bold;
+}
+
+.card-body ul li:last-child{
+    border-bottom: 1px  transparent solid;
+}
+
+.card-body ul li a{
+    color: #000000;
+    text-decoration: none;
+    padding: 7px ;
+    display: block;
+    font-size: 15px;
+}
