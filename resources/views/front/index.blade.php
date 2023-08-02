@@ -19,6 +19,7 @@
     @include('front.blogs')
     @include('front.footer')
 
+                <script src="front/js/bootstrap.js"></script>
 </body>
 
 </html>
