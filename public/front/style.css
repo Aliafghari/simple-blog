@@ -61,11 +61,16 @@ body {
 }
 
 .home-img {
-    background: url("picture/person4.png");
+    position: relative;
+}
+
+.home-img img{
+    /* background: url("picture/person4.png"); */
     background-repeat: no-repeat;
     background-position: left bottom;
-    background-size: 100%;
-    position: relative;
+    /* background-size: 10%; */
+    position: absolute;
+    bottom: 0;
 }
 
 .home-img::before {
