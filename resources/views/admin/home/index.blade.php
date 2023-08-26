@@ -24,7 +24,7 @@
 
                         شما میتوانید تنظیمات خانه را تغییر دهید.
 
-                        <table id="customers">
+                        <table id="customers" class="mt-3">
                             <tr>
                                 <th>عنوان</th>
                                 <th>درباره</th>

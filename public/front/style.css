@@ -1,14 +1,16 @@
 @font-face {
-    font-family: "vazir";
-    src: url("fonts/vazir.eot") format("eot");
-    src: url("fonts/vazir.ttf") format("truetype"),
-        url("fonts/vazir.woff") format("woff"),
-        url("fonts/vazir.woff") format("woff2");
+    font-family: 'vazir';
+    src: url('../fonts/vazir.eot') format('eot');
+    src : url('../fonts/vazir.ttf') format('truetype'),
+    url('../fonts/vazir.woff') format('woff'),
+    url('../fonts/vazir.woff') format('woff2');
 }
 
-body {
+
+
+body{
     direction: rtl;
-    font-family: "vazir" !important;
+    font-family: 'vazir';
 }
 
 .nav {
@@ -68,7 +70,7 @@ body {
     position: relative;
 }
 
-.home-img img{
+.home-img img {
     /* background: url("picture/person4.png"); */
     background-repeat: no-repeat;
     background-position: left bottom;
@@ -140,24 +142,3 @@ body {
     height: auto;
 }
 
-/*  نقطه پشت هر تگ از بین می رود  */
-.card-body ul li{
-    list-style: none;
-    border-bottom: 1px rgb(196, 196, 196) solid;
-}
-
-.card-body ul li:hover {
-    font-weight: bold;
-}
-
-.card-body ul li:last-child{
-    border-bottom: 1px  transparent solid;
-}
-
-.card-body ul li a{
-    color: #000000;
-    text-decoration: none;
-    padding: 7px ;
-    display: block;
-    font-size: 15px;
-}

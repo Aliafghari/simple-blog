@@ -11,8 +11,8 @@
 
                     <div class="card-body">
                         <ul>
-                            <li><a href="">تنظیمات بخش خانه</a></li>
-                            <li><a href="">تنظیمات بخش مهارت ها</a></li>
+                            <li><a href="{{route('home.index')}}">تنظیمات بخش خانه</a></li>
+                            <li><a href="{{route('about.index')}}">تنظیمات بخش مهارت ها</a></li>
                             <li><a href="">تنظیمات بخش بلاگ ها</a></li>
                         </ul>
                     </div>
@@ -24,10 +24,13 @@
                     <div class="card-header">داشبورد</div>
 
                     <div class="card-body">
+                        @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                        از سمت راست تنظیمات سایت را تغییر دهید
 
-                        شما میتوانید تنظیمات سایت را از سمت راست تغییر دهید.
-
-                    </div>
                 </div>
             </div>
         </div>
