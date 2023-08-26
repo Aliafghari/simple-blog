@@ -1,23 +1,22 @@
 <div class="home">
     <div class="container-flued">
         <div class="d-flex align-items-center">
-            <div class="col-lg-8">
+        {{-- <div class="row min-vh-100 align-items-center"> --}}
+            <div class="col-lg-6">
                 <div class="home-text">
-                    <h1 class="fw-bold pb-3">خوش آمدید به وبسایت من</h1>
-                    <h2 class="fw-bold pb-2">من علی افقری هستم</h2>
-                    <h3 class="fw-bold pb-2">طراح و برنامه نویس وب</h3>
+                    <h1 class="fw-bold pb-3">{{$home->title}}</h1>
+                    <h2 class="fw-bold pb-2">{{$home->subject}}</h2>
+                    <h3 class="fw-bold pb-2">{{$home->job}}</h3>
                     <p class="text-muted pb-2">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Pariatur dolorum nam, corrupti
-                        ipsam at earum cumque quaerat voluptate
-                        corporis! Voluptatum amet quia nulla est ipsam
-                        rerum magni nisi dignissimos reprehenderit!
+                        {{$home->description}}
                     </p>
-                    <a href="" class="btn btn-danger px-5">شروع</a>
+                    <a href="{{$home->link}}" class="btn btn-danger px-5">شروع</a>
                 </div>
             </div>
 
-            <div class="col-lg-4 home-img min-vh-100"></div>
+            <div class="col-lg-6 home-img min-vh-100">
+                <img src="{{ asset('admin/images/home/' . $home->image) }}" width="90%" alt="">
+            </div>
         </div>
     </div>
 </div>
