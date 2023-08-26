@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="container">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+    <div class="container-fluid">
         <div class="container" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item px-2">
@@ -13,14 +13,15 @@
                 </li>
             </ul>
         </div>
+        
         <div class="container">
             <div class="d-flex collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item px-2">
-                        <a class="nav-link" aria-current="page" href="/login">ورود</a>
+                        <a class="nav-link" aria-current="page" href="{{ route('login') }}">ورود</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a class="nav-link" href="/register">ثبت نام</a>
+                        <a class="nav-link" href="{{ route('register') }}">ثبت نام</a>
                     </li>
                 </ul>
             </div>
