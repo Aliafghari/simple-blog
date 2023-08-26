@@ -14,18 +14,34 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     {{-- <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet"> --}}
     <link rel="stylesheet" href="{{ asset('front/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('app/style.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('bootstrap.rtl.min.css') }}">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
+<style>
+    @font-face {
+        font-family: 'vazir';
+        src: url('../fonts/vazir.eot') format('eot');
+        src: url('../fonts/vazir.ttf') format('truetype'),
+            url('../fonts/vazir.woff') format('woff'),
+            url('../fonts/vazir.woff') format('woff2');
+    }
+
+    body {
+        direction: rtl;
+        font-family: 'vazir';
+    }
+</style>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    لاراول
-                </a>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+            <div class="container-fluid">
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -33,13 +49,11 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
 
-                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav">
+                        {{-- <ul class="navbar-nav ms-auto"> --}}
                         <!-- Authentication Links -->
                         @guest
 
@@ -65,18 +79,21 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    document.getElementById('logout-form').submit();">
                                         خروج
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    {{-- <a class="dropdown-item" href="{{ route('front') }}">
+                                        صفحه اصلی
+                                    </a> --}}
                                 </div>
-                            </li>
-                        @endguest
+                        </li> @endguest
                     </ul>
                 </div>
             </div>
@@ -86,6 +103,7 @@
             @yield('content')
         </main>
     </div>
+
 
     @yield('js')
 </body>
