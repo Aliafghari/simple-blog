@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
 
+
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">تنظیمات اصلی سایت</div>
@@ -22,17 +23,13 @@
                 <div class="card">
                     <div class="card-header">داشبورد</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    <div class="card-body">
 
-                    {{ __('You are logged in!') }}
+                        شما میتوانید تنظیمات سایت را از سمت راست تغییر دهید.
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
