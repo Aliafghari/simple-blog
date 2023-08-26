@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\administrator\aboutController;
 use App\Http\Controllers\administrator\homeController;
 use App\Http\Controllers\front\frontController;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+// Route::get('/', function () {
+//     return view('front.index');
+// })->name('front');
+Route::get('/', [frontController::class,'index'])->name('front');
 
 
 Auth::routes();
@@ -27,4 +31,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/home/home.page', function () {
 //     return view('admin.home.index');
 // })->name('home.page');
+
 Route::resource('/home/home', homeController::class)->parameters(['home'=>'id']);
+Route::resource('/home/about', aboutController::class)->parameters(['about'=>'id']);
