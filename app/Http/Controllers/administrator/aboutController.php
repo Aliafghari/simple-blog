@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\administrator;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class aboutController extends Controller
 {
@@ -12,7 +14,8 @@ class aboutController extends Controller
      */
     public function index()
     {
-        return view('admin.about.index');
+        $about = About::all();
+        return view('admin.about.index', compact('about'));
     }
 
     /**
@@ -20,7 +23,7 @@ class aboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.about.create');
     }
 
     /**
@@ -28,7 +31,22 @@ class aboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Validator::make($request->all(), [
+            'title' => 'required',
+            'description' => 'required',
+            'link' => 'required',
+        ], [
+            'title.required' => 'وارد کردن عنوان الزامی است!',
+            'description.required' => 'وارد کردن توضیحات الزامی است!',
+            'link.required' => 'وارد کردن لینک الزامی است!',
+        ])->validate();
+
+        About::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'link' => $request->link,
+        ]);
+        return redirect()->route('about.index');
     }
 
     /**
@@ -44,7 +62,8 @@ class aboutController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $about = About::findOrFail($id);
+        return view('admin.about.edit', compact('about'));
     }
 
     /**
@@ -52,7 +71,25 @@ class aboutController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        Validator::make($request->all(), [
+            'title' => 'required',
+            'description' => 'required',
+            'link' => 'required',
+        ], [
+            'title.required' => 'وارد کردن عنوان الزامی است!',
+            'description.required' => 'وارد کردن توضیحات الزامی است!',
+            'link.required' => 'وارد کردن لینک الزامی است!',
+        ])->validate();
+
+        $about = About::findOrFail($id);
+
+        $about->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'link' => $request->link
+        ]);
+
+        return redirect()->route('about.index');
     }
 
     /**
@@ -60,6 +97,8 @@ class aboutController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $about=About::findOrFail($id);
+        $about->destroy($id);
+        return redirect()->route('about.index');
     }
 }
