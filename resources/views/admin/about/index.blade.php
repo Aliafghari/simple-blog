@@ -18,49 +18,42 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">تنظیمات خانه</div>
+                    <div class="card-header">تنظیمات درباره ما</div>
 
                     <div class="card-body">
 
-                        شما میتوانید تنظیمات خانه را تغییر دهید.
+                        شما میتوانید درباره ما را تغییر دهید.
 
                         <table id="customers" class="mt-3">
                             <tr>
                                 <th>عنوان</th>
-                                <th>درباره</th>
-                                <th>شغل</th>
                                 <th>توضیح</th>
                                 <th>لینک</th>
-                                <th>عکس</th>
                                 <th>ویرایش</th>
                                 <th>حذف</th>
                             </tr>
-                            {{-- @foreach ($home as $item)
+                            @foreach ($about as $item)
                                 <tr>
                                     <td>{{ $item->title }}</td>
-                                    <td>{{ $item->subject }}</td>
-                                    <td>{{ $item->job }}</td>
                                     <td>{{ $item->description }}</td>
                                     <td>{{ $item->link }}</td>
-                                    <td><img src="{{ asset('admin/images/home/' . $item->image) }}" width="100px"
-                                            alt=""></td>
-                                    <td><a href="{{ route('home.edit', ['id' => $item->id]) }}"
+                                    <td><a href="{{ route('about.edit', ['id' => $item->id]) }}"
                                             class="btn btn-warning px-4">ویرایش</a></td>
                                     <td><a href="" onclick="destroyUser(event,{{ $item->id }})"
                                             class="btn btn-danger px-4">حذف</a>
 
 
-                                        <form action="{{ route('home.destroy',$item->id) }}" id="deleted-{{$item->id}}" method="POST">
+                                        <form action="{{ route('about.destroy',$item->id) }}" id="deleted-{{$item->id}}" method="POST">
                                             @csrf
                                             @method('delete')
                                         </form>
                                     </td>
 
                                 </tr>
-                            @endforeach --}}
+                            @endforeach
                         </table>
 
-                        <a href="{{ route('home.create') }}" class="btn btn-success px-4 mt-4">تنظیم بخش خانه</a>
+                        <a href="{{ route('about.create') }}" class="btn btn-success px-4 mt-4">تنظیم بخش درباره ما</a>
                     </div>
                 </div>
             </div>
