@@ -12,23 +12,25 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="skill-text">
-                            <h4 class="fs-4 fw-bold pb-3">تخصص من</h4>
+                            <h4 class="fs-4 fw-bold pb-3">{{ $about->title }}</h4>
                             <p class="text-muted">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Deserunt, perferendis.
+                                {{ $about->description }}
                             </p>
-                            <a href="" class="btn btn-danger px-4">با من حرف بزن ...</a>
+                            <a href="{{ $about->link }}" class="btn btn-danger px-4">با من حرف بزن ...</a>
                         </div>
                     </div>
 
                     <div class="col-lg-6">
-                        <div class="progress mt-4">
-                            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">
-                                70% php
+                        @foreach ($skill as $item)
+                            <div class="progress mt-4">
+                                <div class="progress-bar" role="progressbar" style="width: {{ $item->percentage }}%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    {{ $item->percentage }}% &nbsp &nbsp{{ $item->title }}
+                                </div>
                             </div>
-                        </div>
-                        <div class="progress mt-4 ">
+                        @endforeach
+
+                        {{-- <div class="progress mt-4 ">
                             <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="25"
                                 aria-valuemin="0" aria-valuemax="100">
                                 65% laravel
@@ -39,7 +41,7 @@
                                 aria-valuemin="0" aria-valuemax="100">
                                 75% Html&css
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
