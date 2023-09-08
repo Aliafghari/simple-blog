@@ -15,7 +15,7 @@
                     </div>
                 </div>
 
-                @foreach (['title', 'description', 'link'] as $field)
+                @foreach (['title','description', 'image'] as $field)
                     @error($field)
                         <div class="alert alert-danger mt-3">{{ $message }}</div>
                     @enderror
@@ -29,22 +29,21 @@
                     <div class="card-header">افزودن مقادیر جدید </div>
 
                     <div class="card-body">
-                        {{-- برای ارسال عکس در فرم :
-                        enctype="multipart/form-data" --}}
-                        <form action="{{ route('about.update', $about->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('blog.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="form-group mt-3">
                                 <label for="">عنوان</label>
-                                <input type="text" value="{{ $about->title }}" class="form-control" name="title">
+                                <input type="text" value="{{ $blog->title }}" class="form-control" name="title">
                             </div>
                             <div class="form-group mt-3">
                                 <label for="">توضیحات</label>
-                                <textarea type="text" value="{{ $about->description }}" class="form-control" name="description">{{ $about->description }}</textarea>
+                                <textarea type="text" value="{{ $blog->description }}" class="form-control" name="description">{{ $blog->description }}</textarea>
                             </div>
                             <div class="form-group mt-3">
-                                <label for="">لینک</label>
-                                <input type="text" value="{{ $about->link }}" class="form-control" name="link">
+                                <label for="">عکس</label>
+                                <input type="file" class="form-control" name="image">
+                                <img src="{{ asset('admin/images/blog/' . $blog->image) }}" width="100px" alt="">
                             </div>
                             <div class="form-group mt-3">
                                 <button type="submit" class="btn btn-success px-4">ذخیره</button>
