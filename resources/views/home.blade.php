@@ -14,7 +14,7 @@
                             <li><a href="{{route('home.index')}}">تنظیمات بخش خانه</a></li>
                             <li><a href="{{route('about.index')}}">تنظیمات بخش درباره ما</a></li>
                             <li><a href="{{route('skill.create')}}">تنظیمات بخش مهارت ها</a></li>
-                            <li><a href="">تنظیمات بخش بلاگ ها</a></li>
+                            <li><a href="{{route('blog.index')}}">تنظیمات بخش بلاگ ها</a></li>
                         </ul>
                     </div>
                 </div>
