@@ -3,8 +3,7 @@
             <div class="skill-title text-center py-4">
                 <h2 class="fw-bold">مهارت ها</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Deserunt, perferendis.
+                    در این قسمت میتوانید مهارت های من را مشاهده کنید.
                 </p>
             </div>
 

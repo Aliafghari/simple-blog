@@ -48,7 +48,7 @@
                             </div>
                             <div class="form-group mt-3">
                                 <label for="">متن</label>
-                                <textarea type="text" class="form-control" name="description">{{ $home->description }}</textarea>
+                                <textarea type="text" value="{{ $home->description }}" class="form-control" name="description">{{ $home->description }}</textarea>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="">لینک</label>
